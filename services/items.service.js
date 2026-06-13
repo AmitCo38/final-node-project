@@ -5,11 +5,19 @@ export function getAllMoviesService(){
 }
 
 export function getMoviesByCategoryService(category){
-    return getMoviesByCategory(category);
+    const movie=getMoviesByCategory(category);
+
+    if(movie.length===0){
+        throw new Error("We dont have this Category");
+    }
+    return movie;
 }
 
-export function getMoviesByStarsservice(){
+export function getMoviesByStarsService(stars){
+    
+    if(stars<=0 || stars>5){
+        throw new Error("Just between 1-5");
+    }
     return getMoviesByStars(stars);
 }
 
-//לא סויים עדיין ת בהמשך נעשה שימוש איתם 

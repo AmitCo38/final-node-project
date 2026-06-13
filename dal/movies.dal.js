@@ -150,5 +150,5 @@ export function getMoviesByCategory(category) {
 }
 
 export function getMoviesByStars(stars) {
-  return movies.filter(movie => movie.stars.toLowerCase() === stars.toLowerCase());
+  return movies.filter(movie => movie.stars === Number(stars));
 }
