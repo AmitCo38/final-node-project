@@ -2,7 +2,8 @@ import { getRandomQuoteService } from "../services/quotes.service.js";
 
 export async function getRandomQuote(req, res) {
     try {
-        const quote = await getRandomQuoteService();
+        const source = req.params.source;
+        const quote = await getRandomQuoteService(source);
 
         res.json({
             message: "Random quote fetched successfully",

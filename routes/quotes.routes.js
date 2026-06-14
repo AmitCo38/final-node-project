@@ -3,6 +3,6 @@ import { getRandomQuote } from "../controllers/quotes.controller.js";
 
 const router = express.Router();
 
-router.get("/random", getRandomQuote);
+router.get("/random/:source", getRandomQuote);
 
 export default router;
