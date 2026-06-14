@@ -1,6 +1,6 @@
 import express from "express";
 
-import{getAllMovies,getMoviesByCategory,getMoviesByStars} from ".../controllers/item.controller.js";
+import{getAllMovies,getMoviesByCategory,getMoviesByStars} from "../controllers/item.controller.js";
 
 const router=express.Router();
 
