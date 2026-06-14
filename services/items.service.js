@@ -1,4 +1,4 @@
-import { getAllMovies,getMoviesByCategory,getMoviesByStars } from "../dal/movies.dal.js";
+import { getAllMovies, getMoviesByCategory, getMoviesByStars } from "../dal/movies.dal.js";
 
 export function getAllMoviesService(){
     return getAllMovies();
