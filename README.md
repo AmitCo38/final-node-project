@@ -1,4 +1,4 @@
-PROJECT DODE.JS -MOVIES 
+PROJECT NODE.JS -MOVIES 
 -----------------------
 
 NAMES:
