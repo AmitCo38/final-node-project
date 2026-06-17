@@ -12,6 +12,12 @@ app.use(logger);
 
 app.use("/api", mainRoutes);
 
+app.use((req,res)=>{
+    res.status(404).json({
+        message:"ROUTE NOT FOUND TRY SOMETHING ELSE :("
+    });
+});
+
 app.listen(config.port, () => {
     console.log(`Server is running on port ${config.port}`);
 });
