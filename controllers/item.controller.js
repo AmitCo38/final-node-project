@@ -4,10 +4,11 @@ export function getAllMovies(req,res){
   try{
     const movies=getAllMoviesService();
 
-    res.json(movies);
+    res.status(200).json(movies);
   }
-  catch(error){res.status(400).json({message:error.message});
 
+  catch(error){
+    res.status(400).json({message:error.message});
   }
 }
 /////
@@ -16,8 +17,7 @@ export function getMoviesByCategory(req,res){
     const category=req.params.category;
     const movie=getMoviesByCategoryService(category);
 
-    res.json(movie);
-
+    res.status(200).json(movie);
      }
 
      catch(error){
@@ -29,8 +29,9 @@ export function getMoviesByStars(req,res){
      try{
     const stars=req.params.stars;
     const moviestars=getMoviesByStarsService(stars);
-    res.json(moviestars);
-      }
+
+    res.status(200).json(moviestars);
+    }
 
      catch(error){
         res.status(400).json({message:error.message});
