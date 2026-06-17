@@ -1,14 +1,11 @@
 import express from "express";
 import itemsRoutes from "./items.routes.js";
-import quotesRoutes from "./quotes.routes.js";
-import { getTriviaQuestions } from "../controllers/quotes.controller.js";
+import externalRoutes from "./external.routes.js";
 
 const router = express.Router();
 
-router.use("/movies", itemsRoutes);//עבור סרטים
+router.use("/movies", itemsRoutes); // עבור סרטים
 
-router.use("/quotes", quotesRoutes);//לסדרות ממקור חיצוני
-
-router.get("/trivia/:type/:difficulty/:number", getTriviaQuestions);//לטרוויה ממקור חיצוני
+router.use("/", externalRoutes); // עבור routes שמגיעים ממקור חיצוני: quotes + trivia
 
 export default router;

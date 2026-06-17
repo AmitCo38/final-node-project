@@ -1,7 +1,7 @@
 import {
     getRandomQuoteService,
     getTriviaQuestionsService
-} from "../services/quotes.service.js";
+} from "../services/external.service.js";
 
 export async function getRandomQuote(req, res) {
     const source = req.params.source;

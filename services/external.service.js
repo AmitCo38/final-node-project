@@ -191,12 +191,12 @@ export async function getTriviaQuestionsService(type, difficulty, number) {
             };
         }
 
-        if (amountNumber > 50) {
+        if (amountNumber > 9) {
             return {
                 status: 400,
                 data: [
                     {
-                        question: "Maximum number of questions is 50",
+                        question: "Maximum number of questions is 9",
                         choices: []
                     }
                 ]

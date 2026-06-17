@@ -2,13 +2,13 @@ import express from "express";
 import {
     getRandomQuote,
     getTriviaQuestions
-} from "../controllers/quotes.controller.js";
+} from "../controllers/external.controller.js";
 
 const router = express.Router();
 
 // quotes routes
-router.get("/random/:source", getRandomQuote);
-router.get("/random/:source/:amount", getRandomQuote);
+router.get("/quotes/random/:source", getRandomQuote);
+router.get("/quotes/random/:source/:amount", getRandomQuote);
 
 // trivia routes
 router.get("/trivia/:type/:difficulty/:number", getTriviaQuestions);
