@@ -1,18 +1,23 @@
-import { getRandomQuoteService } from "../services/quotes.service.js";
+import {
+    getRandomQuoteService,
+    getTriviaQuestionsService
+} from "../services/quotes.service.js";
 
 export async function getRandomQuote(req, res) {
-    try {
-        const source = req.params.source;
-        const quote = await getRandomQuoteService(source);
+    const source = req.params.source;
+    const amount = req.params.amount;
 
-        res.json({
-            message: "Random quote fetched successfully",
-            data: quote
-        });
-    } catch (error) {
-        res.status(500).json({
-            message: "Failed to get random quote",
-            error: error.message
-        });
-    }
+    const result = await getRandomQuoteService(source, amount);
+
+    res.status(result.status).json(result.data);
+}
+
+export async function getTriviaQuestions(req, res) {
+    const type = req.params.type;
+    const difficulty = req.params.difficulty;
+    const number = req.params.number;
+
+    const result = await getTriviaQuestionsService(type, difficulty, number);
+
+    res.status(result.status).json(result.data);
 }
