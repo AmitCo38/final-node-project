@@ -1,4 +1,4 @@
-import { getAllMovies, getMoviesByCategory, getMoviesByStars } from "../dal/movies.dal.js";
+import { getAllMovies, getMoviesByCategory, getMoviesByStars ,addComment} from "../dal/movies.dal.js";
 
 //////1
 export function getAllMoviesService(){
@@ -27,4 +27,30 @@ export function getMoviesByStarsService(stars){
     }
     return getMoviesByStars(stars);
 }
+
+//////4
+export function addCommentService(id, comment){
+
+    const movieId=Number(id);
+
+    if(isNaN(movieId)){
+        throw new Error("WRITE NUMBER");
+    }
+
+    if(!comment.name){
+        throw new Error("ENTER YOUR USER NAME");
+    }
+
+    if(!comment.comment){
+        throw new Error("ENTER YOUR COMMENT");
+    }
+     const movie=addComment(movieId,comment);
+
+     if(!movie){
+        throw new Error("MOVIE WASNT FOUND");
+     }
+     return movie;
+
+     }
+
 
