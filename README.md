@@ -3,14 +3,14 @@ PROJECT NODE.JS -MOVIES
 
 NAMES:
 ------
-VERONIKA KAVETSKY 
+VERONIKA KAVETSKY
 
 AMIT COHEN
 
 
 WORK SPLIT:
 --------
-3 GET - VERONIKA
+3 GET AND 1 POST - VERONIKA
 
 4 API (חיצוני) - AMIT
 
@@ -20,6 +20,8 @@ OTHER FOLDERS AND FILES - כל אחד שיפר והוסיף עפי הצורך ה
 ABOUT PROJECT:
 --------------
 ABOUT MOVIES:רעיון הפרויקט מתבסס על סרטים שהוכנסו במיוחד לתוכנית , באפשרותכם לבחור את כל הסרטים/קטגוריה ספציפית/מספר כוכבים 
+
+ABOUT POST->COMMENT:באפשרות המשתמש להוסיף תגובה תחת הסרט הרצוי על ידי הזנת מספר הסרט ולאחר מכן , שם משתמש לבחירתו ואת התגובה שלו
 
 ABOUT API(חיצוני) QUOTES:רעיון המתבסס 3 על סדרות שמציגות ציטוטים רנדומלים , באפשרותכם לבחור סדרה ספציפית ובנוסף כמות ציטוטים שתבחרו
 
@@ -67,6 +69,7 @@ All Movies:
 
 http://localhost:3000/api/movies 
 
+---------------------------------
 
 Get by Catagory:
 
@@ -74,12 +77,36 @@ http://localhost:3000/api/movies/category/CataName
 
 CataName- Action/Fantasy/Horror/Family/Comedy/Romance/Sci-Fi/Mystery/Crime/Sports
 
+---------------------------------
 
 Get by Stars:
 
 http://localhost:3000/api/movies/stars/NumberOfStars
 
 NumberOfStars- number of stars 1-5. 
+
+---------------------------------
+
+Post Add Comments:
+first,change the request method to POST then choose body->raw
+
+use this URL:
+
+http://localhost:3000/api/movies/Id
+
+Movie Id - between 1-20.
+
+request body:
+
+{
+
+"name" : "Justin12",
+
+"comment" : "greattt movie!!!"
+
+}
+
+---------------------------------
 
 FOR QUOTES:
 -----------
