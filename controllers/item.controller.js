@@ -1,4 +1,4 @@
-import { getAllMoviesService , getMoviesByCategoryService, getMoviesByStarsService} from "../services/items.service.js";
+import { getAllMoviesService , getMoviesByCategoryService, getMoviesByStarsService,addCommentService} from "../services/items.service.js";
 
 export function getAllMovies(req,res){
   try{
@@ -36,4 +36,17 @@ export function getMoviesByStars(req,res){
      catch(error){
         res.status(400).json({message:error.message});
     }
+}
+////////
+export function addComment(req,res){
+  try{
+    const id=req.params.id;
+    const comment=req.body;
+
+    const movie=addCommentService(id,comment);
+    res.status(201).json(movie);
+  }
+  catch(error){
+    res.status(400).json({message:error.message});
+  }
 }
