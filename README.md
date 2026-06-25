@@ -57,7 +57,7 @@ npm start
 If there is a problem in PowerShell, you can use:
 npm.cmd start
 
-10.Open postman and create a new GET request
+10.Open postman and create a new GET (Expect the comments feature that u need to use "POST" on) request
 
 11.Enter the urls below.
 
